@@ -388,8 +388,8 @@ a {
 .safety-strip .section-inner {
   display: grid;
   gap: 0.25rem;
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .safety-strip span {
@@ -764,6 +764,14 @@ a {
   .flagger-help img {
     width: 50px;
     margin-right: 0.65rem;
+  }
+
+  .safety-strip .section-inner {
+    gap: 0.12rem;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    font-size: 0.88rem;
+    line-height: 1.35;
   }
 
   .formula {
