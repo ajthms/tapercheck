@@ -387,9 +387,8 @@ a {
 }
 
 .safety-strip .section-inner {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
+  display: grid;
+  gap: 0.02rem;
   padding-top: 0.45rem;
   padding-bottom: 0.45rem;
   font-size: 0.84rem;
