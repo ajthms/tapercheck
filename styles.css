@@ -555,7 +555,6 @@ a {
 
 .kentucky-note,
 .disclaimer,
-.public-safety-note,
 .report-safety,
 .report-cta {
   padding: 0.85rem;
@@ -810,6 +809,46 @@ a {
   .report-section h2,
   .about-section h2 {
     font-size: 1.82rem;
+  }
+
+  .checker-grid {
+    gap: 1rem;
+    padding-top: 1.35rem;
+    padding-bottom: 1.35rem;
+  }
+
+  .measure-section,
+  .report-section,
+  .about-section {
+    padding-top: 1.35rem;
+    padding-bottom: 1.35rem;
+  }
+
+  .about-section {
+    min-height: auto;
+  }
+
+  .learn-section {
+    padding-top: 1rem;
+    padding-bottom: 1.35rem;
+  }
+
+  .measure-grid,
+  .learn-grid,
+  .report-grid,
+  .about-grid {
+    gap: 0.85rem;
+  }
+
+  .reference-table-wrap {
+    margin-top: 0.65rem;
+  }
+
+  .measure-grid p,
+  .learn-grid p,
+  .report-grid p,
+  .about-grid p {
+    margin-top: 0.6rem;
   }
 
   .result-primary {
