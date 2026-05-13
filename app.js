@@ -12,6 +12,7 @@ const rangeLength = document.querySelector("#range-length");
 const cycleCount = document.querySelector("#cycle-count");
 const redFlag = document.querySelector("#red-flag");
 const reportText = document.querySelector("#report-text");
+const kytcEmailButton = document.querySelector("#email-kytc");
 const copyButton = document.querySelector("#copy-report");
 const copyStatus = document.querySelector("#copy-status");
 const siteHeader = document.querySelector(".site-header");
@@ -41,6 +42,22 @@ function formatCycleRange(cycles) {
   }
 
   return `${cycles.low} to ${cycles.high} cycles`;
+}
+
+function buildReportText(speed, maxLength, cycles) {
+  return `I would like to report a potentially unsafe temporary lane closure.
+
+Location:
+Direction of travel:
+Date/time observed:
+Posted speed limit: ${speed} mph
+Photos or dashcam video available: yes/no
+
+A merge taper at this speed should be about ${maxLength} ft, or roughly ${formatCycleRange(
+    cycles,
+  )}. The taper appeared dramatically shorter than that benchmark and may deserve review.
+
+Please have the appropriate inspector or agency review the temporary traffic control setup for safety.`;
 }
 
 function createButton(label, isActive, onClick) {
@@ -88,11 +105,11 @@ function renderResult() {
     quickFlag === 1 ? "cycle" : "cycles"
   }, it may be worth reporting.`;
 
-  reportText.value =
-    `I would like to report a potentially unsafe temporary lane closure. The posted ` +
-    `speed limit appeared to be ${state.speed} mph. A merge taper at this speed should be about ${maxLength} ft, or roughly ` +
-    `${formatCycleRange(cycles)}. The taper appeared dramatically shorter than that ` +
-    `benchmark and may deserve review. Please check the temporary traffic control setup for safety.`;
+  reportText.value = buildReportText(state.speed, maxLength, cycles);
+  kytcEmailButton.href =
+    `mailto:KYTC.D05Traffic@ky.gov?subject=${encodeURIComponent(
+      "TTC safety concern at [location]",
+    )}&body=${encodeURIComponent(reportText.value)}`;
 }
 
 function render() {

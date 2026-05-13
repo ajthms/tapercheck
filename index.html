@@ -9,7 +9,7 @@
     >
     <title>TaperCheck</title>
     <link rel="icon" type="image/png" href="assets/tapercheck-logo.png">
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=10">
   </head>
   <body>
     <a class="skip-link" href="#checker">Skip to checker</a>
@@ -168,8 +168,9 @@
               <li>The lane closes suddenly.</li>
               <li>Cones force an abrupt merge.</li>
               <li>Drivers brake hard or swerve.</li>
-              <li>There is a lot of honking near the merge.</li>
-              <li>Drivers stop well before the cone taper begins.</li>
+              <li>Work trucks are parked in a lane with no clear taper.</li>
+              <li>Workers are walking in or near the travel lane.</li>
+              <li>Advance warning signs are missing or unclear.</li>
               <li>Only a few cones are used on a slow road, or only around 6 cones are used on a faster road.</li>
             </ul>
           </div>
@@ -178,33 +179,64 @@
 
       <section class="report-section" aria-labelledby="report-title">
         <div class="section-inner report-grid" id="report">
-          <div>
+          <div class="report-intro">
             <p class="eyebrow">Louisville reporting</p>
             <h2 id="report-title">Report a potentially unsafe lane closure.</h2>
             <p>
-              If a taper looks dramatically shorter than the benchmark, report the location,
-              direction of travel, speed limit, whether anyone was stopping traffic with a paddle,
-              and whether photos or dashcam video are available.
+              If a taper looks dramatically shorter than the benchmark, report what you saw so
+              the right agency can review it.
             </p>
-            <p class="kentucky-note">
-              Kentucky state-maintained routes may use KYTC standard drawings with longer taper expectations.
-              For state routes or highways, KYTC may be the right agency to contact.
+            <p class="public-safety-note">
+              We all drive through these. Workers deserve protection. Drivers deserve warning.
+              TaperCheck helps the public recognize when something looks dangerously short.
             </p>
+          </div>
+
+          <div class="contact-guide" aria-label="Who should I contact?">
+            <h3>Who should I contact?</h3>
+            <div class="contact-card">
+              <strong>Louisville Metro street</strong>
+              <span>Call Metro311 or submit a Metro311 report.</span>
+            </div>
+            <div class="contact-card">
+              <strong>State route, highway, or interstate</strong>
+              <span>Contact KYTC District 5 or call the KYTC Highway Hazard Hotline.</span>
+            </div>
+            <div class="contact-card">
+              <strong>Not sure who owns the road?</strong>
+              <span>Report it anyway. Include exact location, direction, and photos. The agency can redirect it.</span>
+            </div>
+            <div class="contact-card contact-card-urgent">
+              <strong>Immediate crash risk or injury</strong>
+              <span>Call 911.</span>
+            </div>
           </div>
 
           <div class="report-actions" aria-label="Reporting options">
             <a href="tel:311">Call 311</a>
             <a href="tel:+15025745000">Call (502) 574-5000</a>
             <a href="https://louisvilleky.gov/government/metro311" target="_blank" rel="noreferrer">Open Metro311</a>
+            <a id="email-kytc" href="mailto:KYTC.D05Traffic@ky.gov?subject=TTC%20safety%20concern%20at%20%5Blocation%5D">Email KYTC District 5</a>
             <a href="tel:+18773675982">Call KYTC Hazard Hotline</a>
             <a href="https://transportation.ky.gov/IncidentManagement/Pages/Highway-Hazard-Hotline.aspx" target="_blank" rel="noreferrer">Open KYTC info</a>
           </div>
 
           <div class="report-copy">
             <h3>Copy report note</h3>
-            <textarea class="report-textarea" id="report-text" readonly rows="8"></textarea>
+            <p>Use this in Metro311, email, or a KYTC form.</p>
+            <textarea class="report-textarea" id="report-text" readonly rows="11"></textarea>
             <button class="secondary-action" id="copy-report" type="button">Copy report text</button>
             <p class="copy-status" id="copy-status" role="status"></p>
+          </div>
+
+          <div class="report-safety">
+            <strong>Do not stop in traffic, confront workers, or take photos while driving.</strong>
+            <span>Use a passenger, dashcam, or review photos/video after the trip.</span>
+          </div>
+
+          <div class="report-cta">
+            <strong>A small report can prevent a big crash.</strong>
+            <span>You do not need to prove a violation. Clearly report what you saw so the right agency can review it.</span>
           </div>
         </div>
       </section>
@@ -219,6 +251,10 @@
             The goal is not to attack workers in the field. The goal is better accountability,
             training, planning, and oversight from the companies and agencies responsible for
             temporary traffic control.
+          </p>
+          <p>
+            We all drive through these. Workers deserve protection. Drivers deserve warning.
+            TaperCheck helps the public recognize when something looks dangerously short.
           </p>
           <p class="disclaimer">
             TaperCheck is an educational estimate based on standard merge taper-length logic.
@@ -235,6 +271,6 @@
       </div>
     </footer>
 
-    <script src="app.js?v=5"></script>
+    <script src="app.js?v=6"></script>
   </body>
 </html>

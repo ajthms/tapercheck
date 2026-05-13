@@ -554,11 +554,52 @@ a {
 }
 
 .kentucky-note,
-.disclaimer {
+.disclaimer,
+.public-safety-note,
+.report-safety,
+.report-cta {
   padding: 0.85rem;
   border-radius: 8px;
   background: #ecf6fb;
   color: var(--ink) !important;
+}
+
+.contact-guide,
+.report-copy {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.contact-guide h3,
+.report-copy h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.contact-card {
+  display: grid;
+  gap: 0.12rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-card:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.contact-card strong {
+  color: var(--ink);
+}
+
+.contact-card span {
+  color: var(--muted);
+}
+
+.contact-card-urgent strong {
+  color: var(--orange-dark);
 }
 
 .report-actions {
@@ -594,18 +635,6 @@ a {
   outline: none;
 }
 
-.report-copy {
-  padding: 1rem;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--soft);
-}
-
-.report-copy h3 {
-  margin: 0;
-  font-size: 1.05rem;
-}
-
 .report-textarea {
   width: 100%;
   min-height: 10rem;
@@ -631,6 +660,22 @@ a {
   margin-top: 0.5rem !important;
   color: var(--green) !important;
   font-weight: 800;
+}
+
+.report-safety {
+  border-left: 4px solid var(--orange);
+  background: var(--warning);
+}
+
+.report-safety,
+.report-cta {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.report-cta strong {
+  color: var(--orange-dark);
+  font-size: 1.15rem;
 }
 
 .about-section {
@@ -725,6 +770,10 @@ a {
 
   .report-grid {
     grid-template-columns: 0.9fr 0.7fr 1fr;
+  }
+
+  .report-copy {
+    grid-column: span 2;
   }
 
 }
