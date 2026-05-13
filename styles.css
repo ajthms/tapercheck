@@ -525,6 +525,14 @@ a {
   color: var(--muted);
 }
 
+.watch-panel .cone-note {
+  padding: 0.75rem 0.85rem;
+  border-radius: 6px;
+  background: #ecf6fb;
+  color: var(--ink);
+  font-weight: 750;
+}
+
 .red-flags li {
   min-height: 48px;
   padding: 0.75rem 0.85rem;
