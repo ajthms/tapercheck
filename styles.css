@@ -381,19 +381,23 @@ a {
 }
 
 .safety-strip {
-  background: var(--road);
-  color: var(--paper);
+  border-bottom: 1px solid #eadb9c;
+  background: #fff6cf;
+  color: var(--ink);
 }
 
 .safety-strip .section-inner {
-  display: grid;
-  gap: 0.25rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  font-size: 0.84rem;
+  line-height: 1.25;
 }
 
 .safety-strip span {
-  color: #dce5ec;
+  color: #463d1d;
 }
 
 .report-section {
@@ -782,11 +786,12 @@ a {
   }
 
   .safety-strip .section-inner {
-    gap: 0.12rem;
-    padding-top: 0.55rem;
-    padding-bottom: 0.55rem;
-    font-size: 0.88rem;
-    line-height: 1.35;
+    display: grid;
+    gap: 0.02rem;
+    padding-top: 0.38rem;
+    padding-bottom: 0.38rem;
+    font-size: 0.78rem;
+    line-height: 1.22;
   }
 
   .formula {
