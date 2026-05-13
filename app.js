@@ -6,6 +6,7 @@ const state = {
 
 const speedOptions = document.querySelector("#speed-options");
 const resultLabel = document.querySelector("#result-label");
+const resultPanel = document.querySelector(".result-panel");
 const primaryLength = document.querySelector("#primary-length");
 const rangeLength = document.querySelector("#range-length");
 const cycleCount = document.querySelector("#cycle-count");
@@ -52,12 +53,22 @@ function createButton(label, isActive, onClick) {
   return button;
 }
 
+function scrollToResult() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  resultPanel.scrollIntoView({
+    block: "start",
+    behavior: prefersReducedMotion ? "auto" : "smooth",
+  });
+}
+
 function renderOptions() {
   speedOptions.replaceChildren(
     ...speeds.map((speed) =>
       createButton(`${speed} mph`, speed === state.speed, () => {
         state.speed = speed;
         render();
+        requestAnimationFrame(scrollToResult);
       }),
     ),
   );
