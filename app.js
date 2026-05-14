@@ -126,8 +126,8 @@ function renderResult() {
       "Temporary Traffic Control Safety Concern",
     )}&body=${encodeURIComponent(reportText.value)}`;
   kytcEmailButton.href =
-    `mailto:KYTC.D05Traffic@ky.gov?subject=${encodeURIComponent(
-      "TTC safety concern at [location]",
+    `mailto:KYTCDistrict5Permits@ky.gov?subject=${encodeURIComponent(
+      "Temporary Traffic Control Safety Concern at [location]",
     )}&body=${encodeURIComponent(reportText.value)}`;
 }
 
