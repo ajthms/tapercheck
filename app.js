@@ -12,6 +12,7 @@ const rangeLength = document.querySelector("#range-length");
 const cycleCount = document.querySelector("#cycle-count");
 const redFlag = document.querySelector("#red-flag");
 const reportText = document.querySelector("#report-text");
+const metroEmailButton = document.querySelector("#email-metro");
 const kytcEmailButton = document.querySelector("#email-kytc");
 const copyButton = document.querySelector("#copy-report");
 const copyStatus = document.querySelector("#copy-status");
@@ -44,20 +45,34 @@ function formatCycleRange(cycles) {
   return `${cycles.low} to ${cycles.high} cycles`;
 }
 
+function formatCycleNumberRange(cycles) {
+  if (cycles.low === cycles.high) {
+    return String(cycles.low);
+  }
+
+  return `${cycles.low} to ${cycles.high}`;
+}
+
 function buildReportText(speed, maxLength, cycles) {
-  return `I would like to report a potentially unsafe temporary lane closure.
+  const cycleLabel = cycles.high === 1 ? "cycle" : "cycles";
+
+  return `Temporary Traffic Control Safety Concern
 
 Location:
 Direction of travel:
 Date/time observed:
 Posted speed limit: ${speed} mph
+Road type if known: local street / state route / unknown
 Photos or dashcam video available: yes/no
+Company logo visible, if obvious:
 
-A merge taper at this speed should be about ${maxLength} ft, or roughly ${formatCycleRange(
+I observed a temporary traffic control setup that appears unsafe and may need inspection.
+
+A merge taper at this speed should be about ${maxLength} ft, or roughly ${formatCycleNumberRange(
     cycles,
-  )}. The taper appeared dramatically shorter than that benchmark and may deserve review.
+  )} lane-line ${cycleLabel}. The taper appeared dramatically shorter than that benchmark.
 
-Please have the appropriate inspector or agency review the temporary traffic control setup for safety.`;
+Please have the appropriate inspector, permit authority, or responsible agency review the temporary traffic control setup for safety.`;
 }
 
 function createButton(label, isActive, onClick) {
@@ -106,6 +121,10 @@ function renderResult() {
   }, it may be worth reporting.`;
 
   reportText.value = buildReportText(state.speed, maxLength, cycles);
+  metroEmailButton.href =
+    `mailto:metro.311@louisvilleky.gov?subject=${encodeURIComponent(
+      "Temporary Traffic Control Safety Concern",
+    )}&body=${encodeURIComponent(reportText.value)}`;
   kytcEmailButton.href =
     `mailto:KYTC.D05Traffic@ky.gov?subject=${encodeURIComponent(
       "TTC safety concern at [location]",

@@ -8,8 +8,8 @@
       content="TaperCheck helps Louisville drivers learn how long temporary lane-closure merge tapers should look."
     >
     <title>TaperCheck</title>
-    <link rel="icon" type="image/png" href="assets/tapercheck-favicon.png?v=1">
-    <link rel="apple-touch-icon" href="assets/tapercheck-favicon.png?v=1">
+    <link rel="icon" type="image/png" href="assets/tapercheck-favicon.png?v=2">
+    <link rel="apple-touch-icon" href="assets/tapercheck-favicon.png?v=2">
     <link rel="stylesheet" href="styles.css?v=13">
   </head>
   <body>
@@ -193,29 +193,50 @@
             <h3>Who should I contact?</h3>
             <div class="contact-card">
               <strong>Louisville Metro street</strong>
-              <span>Call Metro311 or submit a Metro311 report.</span>
+              <span>Report to Metro311 / Louisville Public Works.</span>
+              <div class="contact-actions" aria-label="Louisville Metro reporting options">
+                <a class="contact-action-primary" href="tel:311">Call Metro311: 311</a>
+                <a href="tel:+15025745000">Call Metro311: (502) 574-5000</a>
+                <a href="https://louisvilleky.gov/government/metro311" target="_blank" rel="noreferrer">Open Metro311</a>
+                <a
+                  id="email-metro"
+                  href="mailto:metro.311@louisvilleky.gov?subject=Temporary%20Traffic%20Control%20Safety%20Concern"
+                >Email Metro311</a>
+              </div>
             </div>
             <div class="contact-card">
-              <strong>State route, highway, or interstate</strong>
-              <span>Contact KYTC District 5 or call the KYTC Highway Hazard Hotline.</span>
+              <div class="contact-card-heading">
+                <img class="state-route-icon" src="assets/state-route.png" alt="State route sign" width="1163" height="1388">
+                <strong>State route, highway, or interstate</strong>
+              </div>
+              <span>Report to KYTC District 5 or call the KYTC Highway Hazard Hotline.</span>
+              <div class="contact-actions" aria-label="KYTC reporting options">
+                <a
+                  id="email-kytc"
+                  class="contact-action-primary"
+                  href="mailto:KYTC.D05Traffic@ky.gov?subject=TTC%20safety%20concern%20at%20%5Blocation%5D"
+                >Email KYTC District 5</a>
+                <a href="tel:+18773675982">Call KYTC Hazard Hotline</a>
+                <a href="https://transportation.ky.gov/IncidentManagement/Pages/Highway-Hazard-Hotline.aspx" target="_blank" rel="noreferrer">Open KYTC info</a>
+              </div>
             </div>
             <div class="contact-card">
               <strong>Not sure who owns the road?</strong>
-              <span>Report it anyway. Include exact location, direction, and photos. The agency can redirect it.</span>
+              <span>
+                Start with Metro311 for Louisville streets or KYTC for state routes/highways.
+                You do not need to identify the crew or contractor. Report the location,
+                direction of travel, time, and what looked unsafe. Include company logos
+                only if they are obvious.
+              </span>
             </div>
             <div class="contact-card contact-card-urgent">
               <strong>Immediate crash risk or injury</strong>
               <span>Call 911.</span>
             </div>
-          </div>
-
-          <div class="report-actions" aria-label="Reporting options">
-            <a href="tel:311">Call 311</a>
-            <a href="tel:+15025745000">Call (502) 574-5000</a>
-            <a href="https://louisvilleky.gov/government/metro311" target="_blank" rel="noreferrer">Open Metro311</a>
-            <a id="email-kytc" href="mailto:KYTC.D05Traffic@ky.gov?subject=TTC%20safety%20concern%20at%20%5Blocation%5D">Email KYTC District 5</a>
-            <a href="tel:+18773675982">Call KYTC Hazard Hotline</a>
-            <a href="https://transportation.ky.gov/IncidentManagement/Pages/Highway-Hazard-Hotline.aspx" target="_blank" rel="noreferrer">Open KYTC info</a>
+            <p class="company-note">
+              Company logo visible? Include it in your report if you can see it.
+              You do not need to contact the company yourself.
+            </p>
           </div>
 
           <div class="report-copy">
@@ -264,10 +285,10 @@
     <footer class="site-footer">
       <div class="section-inner footer-inner">
         <span>TaperCheck</span>
-        <a href="https://mutcd.fhwa.dot.gov/kno_11th_Editionr1.htm" target="_blank" rel="noreferrer">MUTCD source</a>
+        <a href="https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/part6.pdf" target="_blank" rel="noreferrer">MUTCD source</a>
       </div>
     </footer>
 
-    <script src="app.js?v=6"></script>
+    <script src="app.js?v=7"></script>
   </body>
 </html>
