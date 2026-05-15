@@ -17,6 +17,11 @@ const kytcEmailButton = document.querySelector("#email-kytc");
 const copyButton = document.querySelector("#copy-report");
 const copyStatus = document.querySelector("#copy-status");
 const siteHeader = document.querySelector(".site-header");
+const installButton = document.querySelector("#install-action");
+const installModal = document.querySelector("#install-modal");
+const installCloseButtons = document.querySelectorAll("[data-install-close]");
+
+let deferredInstallPrompt = null;
 
 function updateHeaderOffset() {
   const offset = siteHeader.offsetHeight + 12;
@@ -170,13 +175,76 @@ async function copyReportText() {
   }
 }
 
+function isStandaloneApp() {
+  return (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+  );
+}
+
+function openInstallModal() {
+  installModal.hidden = false;
+  document.body.classList.add("modal-open");
+  installModal.querySelector("[data-install-close]").focus();
+}
+
+function closeInstallModal() {
+  installModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  installButton.focus();
+}
+
+async function handleInstallClick() {
+  if (deferredInstallPrompt) {
+    deferredInstallPrompt.prompt();
+
+    try {
+      await deferredInstallPrompt.userChoice;
+    } catch (error) {
+      openInstallModal();
+    }
+
+    deferredInstallPrompt = null;
+    return;
+  }
+
+  openInstallModal();
+}
+
 copyButton.addEventListener("click", copyReportText);
+installButton.addEventListener("click", handleInstallClick);
+installModal.addEventListener("click", (event) => {
+  if (event.target === installModal) {
+    closeInstallModal();
+  }
+});
+installCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeInstallModal);
+});
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !installModal.hidden) {
+    closeInstallModal();
+  }
+});
 window.addEventListener("resize", updateHeaderOffset);
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+});
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  closeInstallModal();
+  installButton.hidden = true;
+});
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("/service-worker.js").catch(() => {});
   });
+}
+
+if (isStandaloneApp()) {
+  installButton.hidden = true;
 }
 
 updateHeaderOffset();

@@ -36,7 +36,7 @@
     <link rel="manifest" href="manifest.webmanifest?v=1">
     <link rel="icon" type="image/png" href="assets/tapercheck-favicon.png?v=2">
     <link rel="apple-touch-icon" href="assets/tapercheck-icon-512.png?v=1">
-    <link rel="stylesheet" href="styles.css?v=15">
+    <link rel="stylesheet" href="styles.css?v=16">
   </head>
   <body>
     <a class="skip-link" href="#checker">Skip to checker</a>
@@ -72,6 +72,9 @@
             <p class="lead">
               Pick the posted speed to see the expected merge taper in feet and lane-line cycles.
             </p>
+            <button class="install-action" id="install-action" type="button">
+              Add TaperCheck to your phone
+            </button>
             <div class="closure-preview" aria-label="Good lane closure compared with a short lane closure">
               <div class="closure-card closure-card-good">
                 <span>Good</span>
@@ -303,10 +306,13 @@
             Questions about TaperCheck:
             <a href="mailto:aj@tapercheck.org">aj@tapercheck.org</a>.
           </p>
-          <p class="creator-credit">Created by AJ Thomas.</p>
         </div>
       </section>
     </main>
+
+    <div class="creator-strip">
+      <div class="section-inner">Created by AJ Thomas.</div>
+    </div>
 
     <footer class="site-footer">
       <div class="section-inner footer-inner">
@@ -316,6 +322,23 @@
       </div>
     </footer>
 
-    <script src="app.js?v=10"></script>
+    <div class="install-modal" id="install-modal" hidden>
+      <div class="install-dialog" role="dialog" aria-modal="true" aria-labelledby="install-title">
+        <h2 id="install-title">Add TaperCheck to your phone</h2>
+        <div class="install-steps">
+          <div>
+            <strong>iPhone</strong>
+            <p>Open this site in Safari, tap Share, then tap Add to Home Screen.</p>
+          </div>
+          <div>
+            <strong>Android</strong>
+            <p>Tap Install if prompted, or use your browser menu and choose Add to Home screen.</p>
+          </div>
+        </div>
+        <button class="secondary-action install-done" type="button" data-install-close>Done</button>
+      </div>
+    </div>
+
+    <script src="app.js?v=11"></script>
   </body>
 </html>

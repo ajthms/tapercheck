@@ -183,6 +183,30 @@ a {
   font-size: 1.05rem;
 }
 
+.install-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 1rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.install-action:hover,
+.install-action:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(18, 107, 143, 0.16);
+  outline: none;
+}
+
 .closure-preview {
   display: grid;
   grid-template-columns: 1fr;
@@ -710,20 +734,23 @@ a {
   font-weight: 900;
 }
 
-.creator-credit {
-  grid-column: 1 / -1;
-  justify-self: end;
-  margin-top: 0 !important;
-  color: var(--muted) !important;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-align: right;
-}
-
 .about-section {
   padding: 2.4rem 0;
   background: var(--soft);
   min-height: calc(100vh - 76px);
+}
+
+.creator-strip {
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.creator-strip .section-inner {
+  padding-top: 0.2rem;
+  padding-bottom: 0.8rem;
 }
 
 .site-footer {
@@ -744,6 +771,65 @@ a {
 
 .footer-inner a {
   color: #c9f0ff;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.install-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(23, 35, 49, 0.56);
+}
+
+.install-modal[hidden] {
+  display: none;
+}
+
+.install-dialog {
+  width: min(440px, 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.install-dialog h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.install-steps {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.install-steps div {
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.install-steps strong {
+  display: block;
+  color: var(--ink);
+}
+
+.install-steps p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.install-done {
+  margin-top: 1rem;
 }
 
 *:focus-visible {
