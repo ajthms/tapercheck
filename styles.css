@@ -618,10 +618,6 @@ a {
   color: var(--muted);
 }
 
-.contact-card-urgent strong {
-  color: var(--orange-dark);
-}
-
 .contact-actions {
   display: grid;
   gap: 0.45rem;
@@ -712,6 +708,16 @@ a {
 .contact-note a {
   color: var(--orange-dark);
   font-weight: 900;
+}
+
+.creator-credit {
+  grid-column: 1 / -1;
+  justify-self: end;
+  margin-top: 0 !important;
+  color: var(--muted) !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: right;
 }
 
 .about-section {
