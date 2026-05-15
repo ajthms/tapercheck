@@ -1,0 +1,27 @@
+{
+  "name": "TaperCheck",
+  "short_name": "TaperCheck",
+  "description": "Learn how long a temporary lane-closure taper should look before reporting a safety concern.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#172331",
+  "categories": ["utilities", "navigation"],
+  "icons": [
+    {
+      "src": "/assets/tapercheck-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/tapercheck-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

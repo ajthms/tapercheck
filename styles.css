@@ -704,6 +704,16 @@ a {
   font-size: 1.15rem;
 }
 
+.contact-note {
+  color: var(--ink) !important;
+  font-weight: 750;
+}
+
+.contact-note a {
+  color: var(--orange-dark);
+  font-weight: 900;
+}
+
 .about-section {
   padding: 2.4rem 0;
   background: var(--soft);
@@ -719,6 +729,7 @@ a {
 .footer-inner {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;

@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#172331">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="TaperCheck">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta
       name="description"
       content="TaperCheck helps Louisville drivers learn how long temporary lane-closure merge tapers should look."
@@ -28,9 +33,10 @@
     >
     <meta name="twitter:image" content="https://tapercheck.org/assets/tapercheck-logo.png?v=2">
     <title>TaperCheck</title>
+    <link rel="manifest" href="manifest.webmanifest?v=1">
     <link rel="icon" type="image/png" href="assets/tapercheck-favicon.png?v=2">
-    <link rel="apple-touch-icon" href="assets/tapercheck-favicon.png?v=2">
-    <link rel="stylesheet" href="styles.css?v=13">
+    <link rel="apple-touch-icon" href="assets/tapercheck-icon-512.png?v=1">
+    <link rel="stylesheet" href="styles.css?v=14">
   </head>
   <body>
     <a class="skip-link" href="#checker">Skip to checker</a>
@@ -293,6 +299,10 @@
             We all drive through these. Workers deserve protection. Drivers deserve warning.
             TaperCheck helps the public recognize when something looks dangerously short.
           </p>
+          <p class="contact-note">
+            Created by AJ Thomas. Agency feedback or questions:
+            <a href="mailto:aj@tapercheck.org">aj@tapercheck.org</a>.
+          </p>
           <p class="disclaimer">
             TaperCheck is an educational estimate based on standard merge taper-length logic.
             It is not an official engineering determination.
@@ -304,10 +314,11 @@
     <footer class="site-footer">
       <div class="section-inner footer-inner">
         <span>TaperCheck</span>
+        <a href="mailto:aj@tapercheck.org">aj@tapercheck.org</a>
         <a href="https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/part6.pdf" target="_blank" rel="noreferrer">MUTCD source</a>
       </div>
     </footer>
 
-    <script src="app.js?v=9"></script>
+    <script src="app.js?v=10"></script>
   </body>
 </html>

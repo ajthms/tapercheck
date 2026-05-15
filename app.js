@@ -173,5 +173,11 @@ async function copyReportText() {
 copyButton.addEventListener("click", copyReportText);
 window.addEventListener("resize", updateHeaderOffset);
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js").catch(() => {});
+  });
+}
+
 updateHeaderOffset();
 render();
