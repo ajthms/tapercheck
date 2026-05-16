@@ -595,6 +595,20 @@ a {
   color: var(--ink) !important;
 }
 
+.disclaimer {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.disclaimer p {
+  margin: 0 !important;
+  color: var(--ink) !important;
+}
+
+.disclaimer p + p {
+  margin-top: 0.55rem !important;
+}
+
 .contact-guide,
 .report-copy {
   padding: 1rem;
@@ -737,7 +751,6 @@ a {
 .about-section {
   padding: 2.4rem 0;
   background: var(--soft);
-  min-height: calc(100vh - 76px);
 }
 
 .creator-strip {
@@ -898,11 +911,57 @@ a {
   }
 
   .report-grid {
-    grid-template-columns: 0.9fr 0.7fr 1fr;
+    grid-template-columns: minmax(230px, 0.8fr) repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .report-intro {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .contact-guide {
+    grid-column: 2 / -1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    align-items: start;
+    gap: 0.85rem;
+  }
+
+  .contact-guide h3,
+  .contact-card:last-of-type,
+  .company-note {
+    grid-column: 1 / -1;
+  }
+
+  .contact-card {
+    padding: 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+  }
+
+  .contact-card:last-of-type {
+    padding-bottom: 0.85rem;
   }
 
   .report-copy {
-    grid-column: span 2;
+    grid-column: 1 / span 2;
+  }
+
+  .report-safety,
+  .report-cta {
+    grid-column: 3;
+  }
+
+  .about-section {
+    padding: 2.1rem 0;
+  }
+
+  .disclaimer {
+    padding: 0.75rem 0.85rem;
   }
 
 }

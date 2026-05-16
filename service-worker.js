@@ -1,8 +1,8 @@
-const CACHE_NAME = "tapercheck-v6";
+const CACHE_NAME = "tapercheck-v8";
 const APP_ASSETS = [
   "/",
   "/index.html",
-  "/styles.css?v=16",
+  "/styles.css?v=18",
   "/app.js?v=11",
   "/manifest.webmanifest?v=1",
   "/assets/tapercheck-icon-192.png",
