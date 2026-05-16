@@ -1,4 +1,4 @@
-const CACHE_NAME = "tapercheck-v5";
+const CACHE_NAME = "tapercheck-v6";
 const APP_ASSETS = [
   "/",
   "/index.html",
@@ -9,8 +9,8 @@ const APP_ASSETS = [
   "/assets/tapercheck-icon-512.png",
   "/assets/tapercheck-logo.png",
   "/assets/tapercheck-favicon.png",
-  "/assets/good-taper.png",
-  "/assets/bad-taper.png",
+  "/assets/good-taper.png?v=2",
+  "/assets/bad-taper.png?v=2",
   "/assets/pov-measure.png",
   "/assets/taperboy.png",
   "/assets/state-route.png"
